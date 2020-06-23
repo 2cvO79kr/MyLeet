@@ -1,15 +1,15 @@
-var maxProfit = function(prices) {
-    if (prices.length == 0 || prices.length == 1) return 0;
-    let a = 0;
+var maxProfit = function(prices) {      //максимальная выгода с покупки и продажи акции
+    if (prices.length == 0 || prices.length == 1) return 0;     // если 0 или 1 элемент - 0
+    let a = 0;      //ствим быстрый и медленный указатели
     let b = 1;
-    let res = 0;
+    let res = 0;    //изначальная выгода - 0
     while ( b != prices.length){
-        if (prices[b] - prices[a] < 0){
-            a = b;
+        if (prices[b] - prices[a] < 0){     // если разница первого и следущего элемента меньше 0 
+            a = b;                          //обновляем медленный указатель до меньшего значения
         } else {
-            res = Math.max(res, prices[b] - prices[a]);
+            res = Math.max(res, prices[b] - prices[a]);     //иначе фиксируем наибольшую разницу значений указателей
             }
-        b++;
+        b++;    //передвигаем быстрый указатель
     }
     return res;
 };

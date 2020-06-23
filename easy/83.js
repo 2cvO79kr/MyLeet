@@ -1,14 +1,14 @@
-var deleteDuplicates = function(head) {
-    let a = head;
+var deleteDuplicates = function(head) {             // извлечение дубликатов листа
+    let a = head;                                   // задаем статичный и динамичный указатели
     let v = head;
-        if (v == null) return v;
-        while (v.next !== null){
-            if (v.next.val == v.val){
-                v.next = v.next.next;
+        if (v == null) return v;                       //если лист пустой выводим лист
+        while (v.next !== null){                        //пока не наткнемся на пустой лист
+            if (v.next.val == v.val){                   //сравниваем значения текущего и следующего листов
+                v.next = v.next.next;                   //при совпадении пропускаем ссылку на след. элемент и переходим далее
             } else {
-                v = v.next;
+                v = v.next;                             //при различии переходит на следующий лист
             }
             
         }
-        return a;
+        return a;           //выводим лист с позиции статичного указателя
     };

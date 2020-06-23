@@ -1,18 +1,18 @@
-var strStr = function(haystack, needle) {
-    let i = 0;
+var strStr = function(haystack, needle) {       //реализация поиска подстроки
+    let i = 0;                      
     let j = 0;
-    if (needle == "") return res = 0;
+    if (needle == "") return res = 0;                   // если подстрока "" - выводим индекс 0
     if (haystack.includes(needle)) {
-        for (i = 0; i < haystack.length; i++) {console.log(i,j, haystack[i], needle[j])
+        for (i = 0; i < haystack.length; i++) {
            
-            if (haystack[i]==needle[j]){
-                j++
+            if (haystack[i]==needle[j]){            // если первый символ строки и подстроки равны
+                j++                                 // проверяем следующие символы
             } else {
-                i = i - j;
-                j = 0;
-            }
-            if (j==needle.length) break;
+                i = i - j;                          //иначе остаемся на текущем символе строки
+                j = 0;                              //и возвращаемся к первому символу подстроки
+            }                                       // для последующих сравнений
+            if (j==needle.length) break;                        //при сравнении всех символов подстроки прерываем цикл
     }
-    return i-j+1;
+    return i-j+1;                                   // выводим индекс начала подстроки в строке
     } else return -1;
 };
