@@ -1,12 +1,12 @@
 var reverseWords = function(s) {
-    let elems = s.split(' ');
+    let elems = s.split(' ');               //разбиваем фразу и записываем слова в массив
    
     for (let i = 0; i < elems.length; i++){
-        let smele = [];
+        let smele = [];                                     //массив для обратного слова
         for (let j = elems[i].length - 1; j >= 0; j--){
-            smele.push(elems[i][j]);
+            smele.push(elems[i][j]);                            //записываем символы элемента основного массива в обратном порядке
         }
-        elems[i] = smele.join('');
+        elems[i] = smele.join('');                              //создаем строку из массива и перезаписываем преобразованное слово
     }
-    return elems.join(' ');
+    return elems.join(' ');             //возвращаем основной массив, преобразованный из массива обратно в строку
 };

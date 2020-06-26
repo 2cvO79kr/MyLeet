@@ -17,26 +17,20 @@ list3.next = list4;
 list4.next = null;
 a = 4;
 
-var removeElements = function(head, val) { 
+var removeElements = function(head, val) {          // VAL - целевой элемент
     let res = {
         val: -1,
         next: null
     };
-    let a = res;
-    let v = res;
+    let a = res;                    //указатель-ссылка в начале списка
+    let v = res;                        //динамичный указатель
     res.next = head;
-    while(v.next !== null){
-        if (v.next == val){
-            v.next = v.next.next;
+    while(v.next !== null){                     //выполняется до тех пор, пока список не закончится
+        if (v.next == val){                     //если ц.элемент найден
+            v.next = v.next.next;               //пропускаем ссылку
         } else {
-            v = v.next;
+            v = v.next;                         //иначе переходим на след лист
         }
     }
     return a.next;
  };
-
-
-
-
-
-console.log(removeElements(list1, a));

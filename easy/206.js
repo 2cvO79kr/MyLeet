@@ -29,16 +29,15 @@ var reverseList = function(head) {
 let current = head;
 let temp;
 let left;
-while (current !== null){
+while (current !== null){           //пока лист не закончится
 
-temp = current.next;
-current.next = left;
-left = current;
-current = temp;
+temp = current.next;                //записываем следующее значение во временное хранилище
+current.next = left;                //перезаписываем это значение 
+left = current;                     //на текущее значение
+current = temp;                     //записываем текущее значение во временное хранилище 
     }
 return left;
 };
 
 let res = reverseList(list1);
 
-console.log(res.next.next.next.next.val);
